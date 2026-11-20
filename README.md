@@ -29,4 +29,9 @@ Quy trình:
 ## Thực hành nhánh
 
 Nội dung này được bổ sung trên nhánh feature/update-readme
-và gộp vào main thông qua Pull Request.
+và gộp vào main thông qua Pull Request.git add README.md
+
+
+## Thực hành Source Control trong VS Code
+
+Tạo nhánh, stage, commit và push bằng giao diện VS Code.
