@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Trang thai: thay doi tu nhanh main
-=======
-Trang thai: thay doi tu nhanh phu
->>>>>>> practice/conflict
+Trang thai: da gop va xu ly xung dot
