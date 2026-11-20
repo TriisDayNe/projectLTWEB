@@ -1,0 +1,36 @@
+name: Deploy HTML to Somee
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-somee
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lay ma nguon tu GitHub
+        uses: actions/checkout@v6
+
+      - name: Kiem tra trang chu
+        run: test -s website/index.html
+
+      - name: Upload website len Somee
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: ./website/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
